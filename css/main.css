@@ -1,0 +1,41 @@
+body {
+    font-family: sans-serif;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+}
+
+.question-container {
+    display: grid;
+    margin-bottom: 50px;
+}
+
+.question-container label {
+    margin: 6px 0;
+}
+
+.question-container input {
+    margin-right: 10px;
+}
+
+.incorrect {
+    color: rgb(204, 16, 16);
+}
+.incorrect span {
+    margin-left: 8px;
+}
+
+.correct {
+    color: rgb(0, 99, 0);
+}
+.correct span {
+    margin-left: 8px;
+}
+
+button {
+    justify-self: start;
+    padding: 4px;
+    margin-top: 12px;
+}
