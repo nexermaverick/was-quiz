@@ -1,8 +1,5 @@
 async function main(all = false){
-    const questionSrc = await getQuestionsSource("./data/questions.gift");
-
-    // Parse questions into objects
-    const questions = divideSourceIntoQuestions(questionSrc);
+    const questions = await fetchQuestions("./data/questions.json");
     const selectedQuestions = all ? shuffleArray(questions) : getRandomQuestions(questions, 10);
 
     renderQuestions(selectedQuestions);
@@ -49,7 +46,7 @@ function renderQuestions(questions) {
 
     questions.forEach( ({ question, source }) => {
         const instruction = question.instruction;
-        const options = question.options;
+        const options = shuffleArray(question.options);
 
         const form = document.createElement("form");
         form.setAttribute("aria-live", "polite");
@@ -76,7 +73,7 @@ function renderQuestions(questions) {
                 const sourcesHeading = document.createElement("h3");
                 const sourcesList = document.createElement("ul");
                 sourcesHeading.innerText = "Sources"
-                source.replaceAll("//", "").split("\n").slice(2).forEach( line => {
+                source.replaceAll("//", "").split("\n").forEach( line => {
                     const li = document.createElement("li");
                     li.innerHTML = markdownToHTML(line)
                     sourcesList.appendChild(li);
@@ -172,9 +169,9 @@ function formatQuestion(source) {
     return { instruction, options };
 }
 
-async function getQuestionsSource(path) {
+async function fetchQuestions(path) {
     const response = await fetch(path);
-    const result = await response.text();
+    const result = await response.json();
     return result;
 }
 
