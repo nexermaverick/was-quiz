@@ -8,13 +8,10 @@ async function main(all = false){
 function getRandomQuestions(questions, amount) {
     let newQuestions = [];
     let usedIndexes = [];
-    console.log(questions)
 
     while (newQuestions.length < amount) {
-        console.log(newQuestions)
         const randomIndex = getRandomInt(0, questions.length - 1);
         const question = questions[randomIndex];
-        console.log(question)
         const exists = usedIndexes.includes(randomIndex);
 
         if(!exists) {
@@ -133,40 +130,6 @@ function createOption(option, name, onSelect) {
     label.appendChild(text);
 
     return label;
-}
-
-function divideSourceIntoQuestions(source) {
-    const sourceList = source.split("\n\n");
-
-    // Do not include the first lines, they are only metadata
-    const questions = sourceList.slice(2);
-
-    const result = questions.reduce((acc, curr, index, arr) => {
-        if(index % 2 !== 0) return acc;
-
-        const question = formatQuestion(arr[index + 1]);
-        return [...acc, { source: curr, question }];
-    }, [])
-
-    return result
-}
-
-function formatQuestion(source) {
-    const list = source.split("\n");
-    const instruction = list[0];
-
-
-    const options = list.reduce((acc, curr) => {
-        const line = curr.trim();
-
-        if(!line.startsWith("~") && !line.startsWith("=")) return acc;
-
-        const isCorrect = line.startsWith("=");
-
-        return [...acc, { text: curr.replace("~", "").replace("=", "").trim(), isCorrect }]
-    }, [])
-
-    return { instruction, options };
 }
 
 async function fetchQuestions(path) {
