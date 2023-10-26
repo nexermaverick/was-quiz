@@ -1152,7 +1152,7 @@
         }
     },
     {
-        "source": "",
+        "source": "[1.4.3 Contrast (Minimum)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)",
         "question": {
             "instruction": "What is the minimum contrast ratio for regular sized text?",
             "options": [
@@ -1170,6 +1170,54 @@
                 },
                 {
                     "text": "5:1",
+                    "isCorrect": false
+                }
+            ]
+        }
+    },
+    {
+        "source": "[1.4.4 Resize text](http://www.w3.org/WAI/WCAG20/quickref/20160105/#visual-audio-contrast-scale)",
+        "question": {
+            "instruction": "According to success criterion 1.4.4 Resize text, how much must the user be able to zoom without loss of functionality or content?",
+            "options": [
+                {
+                    "text": "200%",
+                    "isCorrect": true
+                },
+                {
+                    "text": "400%",
+                    "isCorrect": false
+                },
+                {
+                    "text": "150%",
+                    "isCorrect": false
+                },
+                {
+                    "text": "300%",
+                    "isCorrect": false
+                }
+            ]
+        }
+    },
+    {
+        "source": "[1.4.2 Audio Control](http://www.w3.org/WAI/WCAG20/quickref/20160105/#visual-audio-contrast-dis-audio)",
+        "question": {
+            "instruction": "Which option is adequate to meet 1.4.2 Audio Control?",
+            "options": [
+                {
+                    "text": "Ask the user to lower the system volume",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Make sure the audio does not play for more than 5 seconds",
+                    "isCorrect": false
+                },
+                {
+                    "text": "Allow the user to adjust the volume of the audio",
+                    "isCorrect": true
+                },
+                {
+                    "text": "No options meets the success criterion",
                     "isCorrect": false
                 }
             ]

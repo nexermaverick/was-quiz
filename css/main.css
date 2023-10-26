@@ -1,41 +1,55 @@
 body {
-    font-family: sans-serif;
+  font-family: sans-serif;
 }
 
 main {
-    max-width: 800px;
-    margin: auto;
+  max-width: 800px;
+  margin: auto;
 }
 
 .question-container {
-    display: grid;
-    margin-bottom: 50px;
+  display: grid;
+  margin-bottom: 50px;
 }
 
 .question-container label {
-    margin: 6px 0;
+  margin: 6px 0;
 }
 
 .question-container input {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .incorrect {
-    color: rgb(204, 16, 16);
+  color: rgb(204, 16, 16);
 }
 .incorrect span {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 .correct {
-    color: rgb(0, 99, 0);
+  color: rgb(0, 99, 0);
 }
 .correct span {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 button {
-    justify-self: start;
-    padding: 4px;
-    margin-top: 12px;
+  justify-self: start;
+  padding: 4px;
+  margin-top: 12px;
+}
+
+form {
+  background: rgb(226, 241, 243);
+  padding: 12px;
+  border-radius: 4px;
+}
+form p {
+  margin-top: 0;
+  line-height: 1.5rem;
+}
+
+#question-list {
+  margin-top: 10px;
 }
